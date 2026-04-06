@@ -7,7 +7,6 @@
 #define ROWS 5
 #define COLS 6 
 
-// --- DATA STRUCTURES ---
 
 typedef struct DescriptionNode {
     char text[256];
@@ -35,7 +34,6 @@ typedef struct {
     int consecutive_wins;
 } PlayerState;
 
-// --- HELPER FUNCTIONS ---
 
 void addDescription(WordEntry *word, const char *newDesc) {
     DescriptionNode *newNode = malloc(sizeof(DescriptionNode));
@@ -52,7 +50,6 @@ void addDescription(WordEntry *word, const char *newDesc) {
     }
 }
 
-// --- FILE CRUD: READ OPERATION ---
 WordEntry* loadGameData(const char *filename) {
     FILE *file = fopen(filename, "r");
     if (!file) {
@@ -84,7 +81,7 @@ WordEntry* loadGameData(const char *filename) {
             addDescription(currentW, line + 2);
         }
     }
-    fclose(file); // Closes the file after loading into memory
+    fclose(file);
     return root;
 }
 
@@ -116,31 +113,29 @@ int main() {
     WordEntry *it = vocabulary;
 
     while (currentDay <= 30 && p.limbs > 0 && it) {
-        // Map 1D day to 2D Matrix
+        
         int r = (currentDay - 1) / COLS;
         int c = (currentDay - 1) % COLS;
         trial[r][c].day_num = currentDay;
 
-        // Sunday Rule
+        
         if (currentDay % 7 == 0) {
             printf("\n[SUNDAY: PEACE OF MIND - 1 Heart Only]");
             p.hearts = 1;
             p.hints_allowed = 3;
         } else {
             p.hearts = 3; 
-            p.hints_allowed = 4;
+            p.hints_allowed = 1;
         }
 
         printf("\nDAY %d | Total Score: %d | Limbs Left: %d\n", currentDay, p.total_score, p.limbs);
         
-        // Display hints from the linked list
         DescriptionNode *h = it->descHead;
         for(int i=0; i < p.hints_allowed && h; i++) {
             printf("Hint %d: %s\n", i+1, h->text);
             h = h->next;
         }
 
-        // Time Pressure
         time_t start = time(NULL);
         char guess[50];
         printf("GUESS (15s): ");
