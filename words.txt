@@ -1,0 +1,13 @@
+W:POINTER
+D:A variable that stores a memory address.
+D:In C, you use the asterisk (*) to declare it.
+D:Essential for dynamic memory allocation.
+W:COMPILER
+D:Translates source code into machine code.
+D:GCC is a famous example of this.
+W:RECURSION
+D:A function that calls itself.
+D:Requires a base case to prevent infinite loops.
+W:ARRAY
+D:A collection of elements stored in contiguous memory.
+D:The first index is always zero.
