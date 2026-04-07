@@ -1,3 +1,4 @@
+```
 //=====================================================================\\
 ||    ___ ___   _   ___ _  _ ___  ___ ___ ___  ___ ___ ___  ___ ___   ||
 ||   | _ ) _ \ /_\ |_ _| \| |   \| __/ __| _ \/ __| _ \ _ \| __| _ \  ||
@@ -6,6 +7,7 @@
 ||                                                                    ||
 ||                   >> THE 30-DAY TRIAL OF DEATH <<                  ||
 \\=====================================================================//
+```
 
 # Goal of this game:
 This is a console based game that me and my partner tried to create to solidify our knowledge on the fundamentals of programming:
