@@ -88,6 +88,20 @@ Now, for the fun part. Creating a condition that if the day is Sunday, the game 
 
 -- The game will Start --
 
+First the program prints out your stats as well as your state, and it will now initialize a description node for the head of the description that is under your current word. You will be timed here with the use of time(NULL) function. Afterwards a string with the name of guess will be assigned as a string to which you will input to. 
+
+- If you are out of time you will automatically be deducted by one heart and even mocked
+- If you have guessed wrong you will also be deducted by one heart. And your consecutive wins will be resetted to 0 (awee).
+- **AND IF YOU HAVE LOST ALL YOUR HEARTS, YOU WILL LOSE A LIMB**
+
+What will you do? Of coures be fast and correct.
+
+- If you are right and on-time then you have one consecutive win added to your list of consecutive wins. If you have enough consecutive wins then you have the possibility of gaining a hint (3 consecutive wins) and heck even a miracle limb! (10 consecutive wins).
+
+Then your current score on the day will be recorded by the trial matrix.
+
+After all of this, all your score will be printed out and you will see how you did.
+
 
 
 
