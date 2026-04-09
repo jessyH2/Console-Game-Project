@@ -230,7 +230,7 @@ int main() {
         }
         it = it->nextWord;
         if(it == NULL){
-            printf("There are no more words left in this category! Going to the next category");
+            printf("There are no more words left in this category! Going to the next category\n");
             randomIdx = rand() % totalCategories;
             currentCategory = &categories[randomIdx];
             it = currentCategory->wordHead;
