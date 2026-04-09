@@ -101,9 +101,4 @@ What will you do? Of coures be fast and correct.
 Then your current score on the day will be recorded by the trial matrix.
 
 After all of this, all your score will be printed out and you will see how you did.
-
-
-
-
-
-
+And of course do not forget to free your memory, because it is not used anymore.

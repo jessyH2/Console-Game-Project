@@ -1,13 +1,310 @@
+C:LOW_LEVEL_C
 W:POINTER
-D:A variable that stores a memory address.
-D:In C, you use the asterisk (*) to declare it.
-D:Essential for dynamic memory allocation.
-W:COMPILER
-D:Translates source code into machine code.
-D:GCC is a famous example of this.
-W:RECURSION
-D:A function that calls itself.
-D:Requires a base case to prevent infinite loops.
+D:Stores the memory address of another variable. [7 Letters]
+W:MALLOC
+D:Allocates a specified number of bytes in the heap. [6 Letters]
+W:STRUCT
+D:A user-defined composite data type. [6 Letters]
+W:UNION
+D:Stores different data types in the same memory location. [5 Letters]
+W:SIZEOF
+D:Operator that returns the size of a variable in bytes. [6 Letters]
+W:TYPEDEF
+D:Creates a new name for an existing data type. [7 Letters]
+W:INCLUDE
+D:Preprocessor directive to paste a header file. [7 Letters]
+W:MACRO
+D:A fragment of code replaced by the preprocessor. [5 Letters]
+W:PRAGMA
+D:Issues compiler-specific commands. [6 Letters]
+W:HEAP
+D:Region of memory used for dynamic allocation. [4 Letters]
+W:STACK
+D:LIFO memory region for local variables and function calls. [5 Letters]
+W:BUFFER
+D:Temporary memory for data in transit. [6 Letters]
+W:EXTERN
+D:Keyword declaring a variable defined in another file. [6 Letters]
+W:VOLATILE
+D:Tells the compiler a variable may change unexpectedly. [8 Letters]
+W:STATIC
+D:Keyword that preserves a variable's value between function calls. [6 Letters]
+C:LINUX_SYSTEMS
+W:KERNEL
+D:The core interface between hardware and the OS. [6 Letters]
+W:BASH
+D:The Bourne Again Shell. [4 Letters]
+W:ROOT
+D:The superuser account with absolute privileges. [4... Letters]
+W:SUDO
+D:Executes a command as another user. [4 Letters]
+W:DAEMON
+D:A background process, like your gnome-keyring. [6 Letters]
+W:INODE
+D:Data structure storing metadata about a file. [5 Letters]
+W:GREP
+D:Searches plain-text data sets for lines matching a regular expression. [4 Letters]
+W:CHMOD
+D:Command used to change file access permissions. [5 Letters]
+W:MOUNT
+D:Attaches a filesystem to the directory tree. [5 Letters]
+W:SWAP
+D:Disk space used as virtual memory when RAM is full. [4 Letters]
+W:PACMAN
+D:The default package manager for Arch Linux. [6 Letters]
+W:SYSTEMD
+D:The init system used by most modern Linux distributions. [7 Letters]
+W:WAYLAND
+D:A modern display server protocol replacing X11. [7 Letters]
+W:CRON
+D:A time-based job scheduler in Unix-like systems. [4 Letters]
+W:SHELL
+D:The command-line interpreter. [5 Letters]
+C:MATH_AND_MATRICES
+W:MATRIX
+D:A rectangular array of numbers arranged in rows and columns. [6 Letters]
+W:VECTOR
+D:A mathematical object with magnitude and direction. [6 Letters]
+W:INVERSE
+D:A matrix that, when multiplied by the original, yields the identity matrix. [7 Letters]
+W:SCALAR
+D:A single number, rather than a vector or matrix. [6 Letters]
+W:EIGENVALUE
+D:A scalar that determines how much a corresponding eigenvector is stretched. [10 Letters]
+W:TENSOR
+D:A mathematical object generalizing scalars, vectors, and matrices. [6 Letters]
+W:IDENTITY
+D:A square matrix with ones on the main diagonal and zeros elsewhere. [8 Letters]
+W:ALGEBRA
+D:The branch of mathematics dealing with symbols and the rules for manipulating them. [7 Letters]
+W:DETERMINANT
+D:A scalar value computed from the elements of a square matrix. [11 Letters]
+W:TRANSPOSE
+D:An operator which flips a matrix over its diagonal. [9 Letters]
+W:COLUMN
+D:A vertical arrangement of elements in a matrix. [6 Letters]
+W:ROW
+D:A horizontal arrangement of elements in a matrix. [3 Letters]
+W:DOT
+D:A product that yields a scalar from two vectors. [3 Letters]
+W:CROSS
+D:A product that yields a perpendicular vector from two vectors. [5 Letters]
+W:NORM
+D:A function that assigns a strictly positive length to each vector. [4 Letters]
+C:CYBER_SECURITY
+W:MALWARE
+D:Software designed to disrupt, damage, or gain unauthorized access. [7 Letters]
+W:PHISHING
+D:Fraudulent practice of sending emails to trick users into revealing info. [8 Letters]
+W:FIREWALL
+D:A network security system that monitors incoming and outgoing traffic. [8 Letters]
+W:BOTNET
+D:A network of infected devices controlled by an attacker. [6 Letters]
+W:TROJAN
+D:Malware disguised as legitimate software. [6 Letters]
+W:CIPHER
+D:An algorithm for performing encryption or decryption. [6 Letters]
+W:HACKER
+D:A person who uses computers to gain unauthorized access to data. [6 Letters]
+W:PAYLOAD
+D:The part of the malware code that executes the malicious action. [7 Letters]
+W:EXPLOIT
+D:Code that takes advantage of a software vulnerability. [7 Letters]
+W:DECRYPT
+D:To convert encoded data back into its original form. [7 Letters]
+W:ENCRYPT
+D:To scramble data so that only authorized parties can understand it. [7 Letters]
+W:ROOTKIT
+D:Software designed to hide the existence of certain processes or programs. [7 Letters]
+W:SPYWARE
+D:Software that secretly monitors and collects user information. [7 Letters]
+W:SPOOFING
+D:Falsifying data to appear as another person or program. [8 Letters]
+W:TOKEN
+D:A physical or digital device used to prove identity. [5 Letters]
+C:GAME_DEV_SFML
+W:SPRITE
+D:A 2D image or animation integrated into a larger scene. [6 Letters]
+W:TEXTURE
+D:An image loaded into the GPU memory to be applied to a shape or sprite. [7 Letters]
+W:WINDOW
+D:The OS-level container where rendering takes place. [6 Letters]
+W:EVENT
+D:An object representing a user action, like a key press or mouse click. [5 Letters]
+W:DELTA
+D:The time difference between the current frame and the last frame. [5 Letters]
+W:FRAME
+D:A single rendered image in an animation or game loop. [5 Letters]
+W:RENDER
+D:The process of drawing visuals to the screen. [6 Letters]
+W:SHADER
+D:A program running on the GPU to calculate rendering effects. [6 Letters]
+W:PIXEL
+D:The smallest unit of a digital image or display. [5 Letters]
+W:HITBOX
+D:An invisible geometric shape used for collision detection. [6 Letters]
+W:ASSET
+D:A piece of media, like a sound file or image, used in a game. [5 Letters]
+W:COLLIDER
+D:A component that defines the physical boundaries of an object. [8 Letters]
+W:VERTEX
+D:A data structure describing a point in 2D or 3D space. [6 Letters]
+W:CANVAS
+D:The drawing area or context where graphics are plotted. [6 Letters]
+W:CAMERA
+D:Defines the viewport or perspective through which the game world is seen. [6 Letters]
+C:LOW_LEVEL_C2
 W:ARRAY
-D:A collection of elements stored in contiguous memory.
-D:The first index is always zero.
+D:A collection of elements stored at contiguous memory locations. [5 Letters]
+W:STRING
+D:A one-dimensional array of characters terminated by a null character. [6 Letters]
+W:NULL
+D:A special pointer value indicating it points to nothing. [4 Letters]
+W:CAST
+D:Forcing a variable to be treated as a different data type. [4 Letters]
+W:BITWISE
+D:Operations performed directly on the binary representations of data. [7 Letters]
+W:REGISTER
+D:The fastest and smallest memory location directly within the CPU. [8 Letters]
+W:GLOBAL
+D:A variable declared outside any function, accessible anywhere. [6 Letters]
+W:LOCAL
+D:A variable scoped only to the function in which it is declared. [5 Letters]
+W:CONST
+D:Keyword used to declare a variable as immutable or read-only. [5 Letters]
+W:INLINE
+D:A hint telling the compiler to substitute the function's body directly. [6 Letters]
+W:LEAK
+D:A critical flaw where dynamically allocated memory is never freed. [4 Letters]
+W:DEREFERENCE
+D:Using the * operator to access the value at a pointer's address. [11 Letters]
+W:ASSERT
+D:A macro used during debugging to verify assumptions in the code. [6 Letters]
+W:GDB
+D:The standard GNU debugger used for finding errors in C programs. [3 Letters]
+W:MAKEFILE
+D:A configuration file containing rules to compile and build a project. [8 Letters]
+C:LINUX_SYSTEMS2
+W:UBUNTU
+D:A highly popular, beginner-friendly Debian-based Linux distribution. [6 Letters]
+W:ARCH
+D:A lightweight, rolling-release Linux distribution for power users. [4 Letters]
+W:GRUB
+D:A common bootloader used to start Linux operating systems. [4 Letters]
+W:PIPE
+D:A vertical bar character used to pass output from one command to another. [4 Letters]
+W:ALIAS
+D:A custom, user-defined shortcut for a longer terminal command. [5 Letters]
+W:KILL
+D:A command used to send termination signals to running processes. [4 Letters]
+W:TAR
+D:A utility for collecting many files into a single archive file. [3 Letters]
+W:SSH
+D:A cryptographic network protocol for secure remote terminal access. [3 Letters]
+W:VIM
+D:A highly configurable, modal text editor built for the terminal. [3 Letters]
+W:NANO
+D:A simple, intuitive, non-modal terminal text editor. [4 Letters]
+W:PING
+D:A network utility used to test the reachability of a host. [4 Letters]
+W:WGET
+D:A command-line utility for downloading files from the internet. [4 Letters]
+W:CHOWN
+D:A command used to change the owner and group of a file or directory. [5 Letters]
+W:HTOP
+D:An interactive, colorized process viewer and system monitor. [4 Letters]
+W:FSTAB
+D:A system configuration file detailing disk drives and their mount points. [5 Letters]
+C:MATH_AND_MATRICES2
+W:AXIS
+D:A fixed reference line used for the measurement of coordinates. [4 Letters]
+W:ORIGIN
+D:The central point where the X and Y axes intersect at zero. [6 Letters]
+W:RADIUS
+D:The straight line distance from the center of a circle to its perimeter. [6 Letters]
+W:ANGLE
+D:The figure formed by two intersecting lines or rays. [5 Letters]
+W:SINE
+D:Trigonometric ratio of the opposite side over the hypotenuse. [4 Letters]
+W:COSINE
+D:Trigonometric ratio of the adjacent side over the hypotenuse. [6 Letters]
+W:TANGENT
+D:A straight line that touches a curve at a single point without crossing. [7 Letters]
+W:PI
+D:The mathematical constant ratio of a circle's circumference to its diameter. [2 Letters]
+W:THETA
+D:A Greek letter commonly used in mathematics to represent an angle. [5 Letters]
+W:QUATERNION
+D:A complex mathematical system used heavily to calculate 3D rotations. [10 Letters]
+W:MAGNITUDE
+D:The calculated length, size, or absolute value of a vector. [9 Letters]
+W:ORTHOGONAL
+D:A term meaning two vectors are completely perpendicular to each other. [10 Letters]
+W:SYMMETRIC
+D:A square matrix that is exactly equal to its own transpose. [9 Letters]
+W:TRACE
+D:The sum of all elements along the main diagonal of a square matrix. [5 Letters]
+W:DEGREE
+D:A common unit of measurement used for angles. [6 Letters]
+C:CYBER_SECURITY2
+W:RANSOMWARE
+D:Malicious software that encrypts user data and demands payment. [10 Letters]
+W:KEYLOGGER
+D:Spyware designed to secretly record every button pressed by the user. [9 Letters]
+W:BACKDOOR
+D:A hidden method built into a system to bypass normal authentication. [8 Letters]
+W:WORM
+D:Self-replicating malware that spreads autonomously across networks. [4 Letters]
+W:VIRUS
+D:Malware that requires attaching itself to clean files to execute and spread. [5 Letters]
+W:HASH
+D:A fixed-length string generated algorithmically from data for security. [4 Letters]
+W:SALT
+D:Randomized data added to a password before it is hashed. [4 Letters]
+W:DDOS
+D:A coordinated attack that overwhelms a target server with fake traffic. [4 Letters]
+W:PROXY
+D:An intermediary server that acts as a gateway and hides your IP address. [5 Letters]
+W:VPN
+D:A technology that creates a secure, encrypted tunnel over the internet. [3 Letters]
+W:ZERODAY
+D:A critical software vulnerability that the developers do not yet know about. [7 Letters]
+W:SNIFFER
+D:A tool used by attackers to capture and analyze network traffic packets. [7 Letters]
+W:HONEYPOT
+D:A decoy computer system explicitly designed to lure in cyber attackers. [8 Letters]
+W:PATCH
+D:A software update designed to fix a specific bug or security vulnerability. [5 Letters]
+W:BREACH
+D:An incident where confidential or protected data is accessed illegally. [6 Letters]
+C:GAME_DEV_SFML2
+W:PHYSICS
+D:The coded system governing movement, gravity, and collisions in a game. [7 Letters]
+W:GRAVITY
+D:A constant downward force applied mathematically to moving entities. [7 Letters]
+W:FRICTION
+D:A force that gradually slows down moving objects over time. [8 Letters]
+W:VELOCITY
+D:A vector representing the speed and direction of an object's movement. [8 Letters]
+W:ANIMATION
+D:A rapid sequence of sprite frames played in order to create motion. [9 Letters]
+W:SOUND
+D:A short, uncompressed audio file played during specific game events. [5 Letters]
+W:MUSIC
+D:A longer, compressed audio stream that loops in the background. [5 Letters]
+W:FONT
+D:A loaded system file containing the visual glyphs used for rendering text. [4 Letters]
+W:TEXT
+D:A drawable SFML object used to display strings on the screen. [4 Letters]
+W:COLOR
+D:An object defined by Red, Green, Blue, and Alpha values to tint sprites. [5 Letters]
+W:RECTANGLE
+D:A 4-sided primitive shape commonly used for basic 2D rendering or UI. [9 Letters]
+W:CIRCLE
+D:A primitive round shape defined by a radius in the SFML library. [6 Letters]
+W:INPUT
+D:Hardware data received from the user's keyboard, mouse, or controller. [5 Letters]
+W:LOOP
+D:The core while-cycle that updates logic and draws graphics continuously. [4 Letters]
+W:SCENE
+D:A specific state of the game engine, such as the Main Menu or Level 1. [5 Letters]

@@ -140,12 +140,24 @@ void printBrainDescGrepHeader() {
     printf("||                >> THE 30-DAY TRIAL OF DEATH <<                     ||\n");
     printf("\\\\========================================================================//\n");
 }
+void freerD(DescriptionNode * d){
+    if(d == NULL)return;
+    freerD(d->next);
+    free(d);
+}
+
+void freerW(WordEntry * w){
+    if(w == NULL) return;
+    freerD(w->descHead);
+    freerW(w->nextWord);
+    free(w);
+}
 
 int main() {
-    // 1. Initialize Random Seed
+    
     srand(time(NULL));
 
-    // 2. Load Data into the Array of Categories
+    
     int totalCategories = 0;
     Category *categories = loadGameData("words.txt", &totalCategories);
     
@@ -157,50 +169,47 @@ int main() {
     printBrainDescGrepHeader();
 
     HistoryNode trial[ROWS][COLS] = {0};
-    PlayerState p = {3, 4, 4, 0, 0}; // hearts, hints, limbs, score, streak
+    PlayerState p = {3, 1, 4, 0, 0}; 
     
     int currentDay = 1;
 
-    // The game loop runs for 30 days or until limbs run out
-    while (currentDay <= 30 && p.limbs > 0) {
+    
+    while (currentDay <= 28 && p.limbs > 0) {
         int r = (currentDay - 1) / COLS;
         int c = (currentDay - 1) % COLS;
         trial[r][c].day_num = currentDay;
 
-        // 3. RANDOMIZER: Pick a random category for the day
+        
         int randomIdx = rand() % totalCategories;
         Category *todaysCategory = &categories[randomIdx];
 
-        // 4. PICK A WORD: For simplicity, we'll pick the first word of that category
-        // (If you want a random word within the category, we can add a shuffler later!)
+        
         WordEntry *it = todaysCategory->wordHead;
 
         if (!it) {
-            currentDay++; // Skip if category is empty
+            currentDay++; 
             continue;
         }
 
-        // Sunday Rule
+        
         if (currentDay % 7 == 0) {
             printf("\n[SUNDAY: PEACE OF MIND - 1 Heart Only]");
             p.hearts = 1;
             p.hints_allowed = 3;
         } else {
             p.hearts = 3; 
-            p.hints_allowed = 1; // Base hints
+            p.hints_allowed = 1; 
         }
 
         printf("\nDAY %d | Category: %s\n", currentDay, todaysCategory->name);
         printf("Score: %d | Limbs: %d | Hearts: %d\n", p.total_score, p.limbs, p.hearts);
         
-        // Display hints
         DescriptionNode *h = it->descHead;
         for(int i = 0; i < p.hints_allowed && h; i++) {
             printf("Hint %d: %s\n", i + 1, h->text);
             h = h->next;
         }
-
-        // Time Pressure Logic
+        
         time_t start = time(NULL);
         char guess[50];
         printf("GUESS (15s): ");
@@ -226,14 +235,12 @@ int main() {
             p.consecutive_wins = 0;
         }
 
-        // Limb Loss Logic
         if (p.hearts <= 0) {
             p.limbs--;
             printf("!!! A LIMB WAS SEVERED !!! (%d remaining)\n", p.limbs);
             if (p.limbs > 0) p.hearts = 3; 
         }
-
-        // Update Matrix State
+        
         trial[r][c].score = p.total_score;
         trial[r][c].limbs_remaining = p.limbs;
         trial[r][c].survived = (p.limbs > 0);
@@ -241,6 +248,10 @@ int main() {
         currentDay++;
     }
 
+    for(int i = 0; i<totalCategories; i++){
+        freerW(categories[i].wordHead);
+    }
+    free(categories);
     showMatrix(trial);
     return 0;
 } 
