@@ -34,7 +34,6 @@ typedef struct {
 
 typedef struct {
     int hearts;
-    int hints_allowed;
     int limbs;
     int total_score;
     int consecutive_wins;
@@ -169,7 +168,7 @@ int main() {
     printBrainDescGrepHeader();
 
     HistoryNode trial[ROWS][COLS] = {0};
-    PlayerState p = {3, 1, 4, 0, 0}; 
+    PlayerState p = {3, 4, 0, 0}; 
     
     int currentDay = 1;
 
@@ -195,20 +194,12 @@ int main() {
         if (currentDay % 7 == 0) {
             printf("\n[SUNDAY: PEACE OF MIND - 1 Heart Only]");
             p.hearts = 1;
-            p.hints_allowed = 3;
         } else {
-            p.hearts = 3; 
-            p.hints_allowed = 1; 
+            p.hearts = 3;  
         }
 
         printf("\nDAY %d | Category: %s\n", currentDay, todaysCategory->name);
         printf("Score: %d | Limbs: %d | Hearts: %d\n", p.total_score, p.limbs, p.hearts);
-        
-        DescriptionNode *h = it->descHead;
-        for(int i = 0; i < p.hints_allowed && h; i++) {
-            printf("Hint %d: %s\n", i + 1, h->text);
-            h = h->next;
-        }
         
         time_t start = time(NULL);
         char guess[50];
@@ -223,7 +214,6 @@ int main() {
             p.total_score += 10;
             p.consecutive_wins++;
             
-            if (p.consecutive_wins % 3 == 0) p.hints_allowed++;
             if (p.consecutive_wins >= 10 && p.limbs < 4) {
                 p.limbs++;
                 printf("MIRACLE: A LIMB GREW BACK!\n");

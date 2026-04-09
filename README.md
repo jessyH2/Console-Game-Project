@@ -14,19 +14,16 @@ This is a console based game that me and my partner tried to create to solidify 
 
 ### Game description:
 This game is about a human trying to survive a 30 day trial to which if he guesses the words wrong he will lost limb and suffer
-at his own fault. Well, he was given three chances per limb after all, and on top of that he can even use another hint to make 
-answering the hard word significantly easier. However, this changes on Sundays - as the person becomes [weakened]. To compromise
-his weakness, he enters [divinity] having more hint points to use. Additionally, to reward him from being good at answering the
-the words, he will gain a limb if he can answer the descriptions 10 times continously, similarly he will also gain hints if he can
-answer three times continuously, however [divinity] is the limit. That means he can only have three maximum hint.
+at his own fault. Well, he was given three chances per limb after all. However, this changes on Sundays - as the person becomes [weakened]. To reward him from being good at answering the
+the words, he will gain a limb if he can answer the descriptions 10 times continously and note that his maximum limb is 4 since he is just a human.
 
 ### Simplified Game Logic:
 
 - You are a human. (You have four limbs)
 - Each limb is equivalent to three hearts and a hint on normal days and one heart and three hints on Sundays.
 - If you answered the word right 10 times, you gain one limb (max of four - because you are a human)
-- If you answered the word right 3 times, you gain one hint (maximum of three - you are not a god.)
-- Your score is recorded in a 30-Day format (representing one month of suffering)
+
+- Your score is recorded in a 28-Day format (representing one month of suffering)
 
 ### Game Structure and Function Logic:
 
@@ -84,7 +81,7 @@ There are two variables that are noticeable right from the start of the main gam
 
 Directly below the rows and columns logic there comes the randomizer. It randomizes to whatever category it will go. With the use of the rand() function seeded by the time(null) function which is just the number of seconds from some certain date up until now, you can make sure that the random index is actually random (the remainder of any number and another number will always not go beyond the second number). And after randomly selecting the category, of course you will need to access the words that are in that category. And by assigning a word node to the head of the nodes inside the category, you can now start the game of answering. However when the category is empty the program will skip it.
 
-Now, for the fun part. Creating a condition that if the day is Sunday, the game will proceed with the [weakened] + [divinity] part, else the game will continue normally.
+Now, for the fun part. Creating a condition that if the day is Sunday, the game will proceed with the [weakened] part, else the game will continue normally.
 
 -- The game will Start --
 
@@ -96,7 +93,7 @@ First the program prints out your stats as well as your state, and it will now i
 
 What will you do? Of coures be fast and correct.
 
-- If you are right and on-time then you have one consecutive win added to your list of consecutive wins. If you have enough consecutive wins then you have the possibility of gaining a hint (3 consecutive wins) and heck even a miracle limb! (10 consecutive wins).
+- If you are right and on-time then you have one consecutive win added to your list of consecutive wins. If you have enough consecutive wins then you have the possibility of gaining a miracle limb! (10 consecutive wins).
 
 Then your current score on the day will be recorded by the trial matrix.
 
