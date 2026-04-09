@@ -201,6 +201,9 @@ int main() {
         printf("\nDAY %d | Category: %s\n", currentDay, todaysCategory->name);
         printf("Score: %d | Limbs: %d | Hearts: %d\n", p.total_score, p.limbs, p.hearts);
         
+        if(it->descHead){
+            printf("Hint: %s\n", it->descHead->text);
+        }
         time_t start = time(NULL);
         char guess[50];
         printf("GUESS (15s): ");
