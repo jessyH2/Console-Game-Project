@@ -60,7 +60,7 @@ This function is used to make a list of descriptions under the same words. How d
 
 *loadGameData*
 
-This function is basically the creation of the word list that we have. Notice how the addDescription function works? It appends to the last node on the list (as I mentioned before on my description of the word node), similar to that of the function above. The only catch here is that it goes through a file called "words.txt" (in main) and reads if there is a *W:* tag. If there is, it will create an instance of a word node and append it to the last node. If there is no tags like that it will then proceed to the *D:* tag, which will be passed as a string to the function addDescription. Easy right? This is just making a list that contains a list (similar to a matrix which is just an array containing an array). Afterwards, of coures you will need to close the file.
+This function is basically for the creation of the word list that we have that is to be added on the category. Notice how the addDescription function works? It appends to the last node on the list (as I mentioned before on my description of the word node), similar to that of the function above. The only catch here is that it goes through a file called "words.txt" (in main) and reads if there is a *C:* tag firsta and then a *W:* tag, lastly the *D:* tag. If there is a tag for the category, then it will make an instance of the category structure that is to be added to the category array. Then after seeing the word tag it will create an instance of a word node and append it to the last word node seen. If there is no tags like that it will then proceed to the *D:* tag, which will be passed as a string to the function addDescription. Easy right? This is just making array that contains a list that contains a list (similar to a matrix which is just an array containing an array). However, do note that this will be done up until the end of the file. Afterwards, of course you will need to close the file.
 
 ---
 
@@ -72,7 +72,23 @@ This function is just for showing the record that you have per day for the 28 da
 
 *main*
 
-This is the implementation of the functions above. As you can see we have created an instance of the word list names vocabulary - by passing the string with the name words.txt (which this string will be used to open the file names "words.txt"). It will also check if the list is empty. If it is, then of course it will end there. 
+This where the implementation of the functions above came together. On the first line below the main() function, there is a time parser. This is made to make randomization for the category later. Right below it there can be seen the variable for the count of categories that will be made. This variable will be used later for the same purpose as the random time parser. It is passed as a reference to the loadGameData() function for the purpose of editing it's memory address itself without using too much of stack memory upon the function call and lessening the amount of lines of codes on the program.
+
+The main() function also checks for the categories if it is either really loaded or the total categories is equal to 0 (this means that the words.txt does not exist or there are no categories present, which will hinder the game from being played).
+
+Now as for the HistoryNode matrix (representation of 28 days), we need to initialize it first with 0 to avoid garbage memory to occupy the grids of the matrix. Similar with PlayerState we also need to initialize it with our starting values.
+
+We are starting at currentDay which is Day-1 (things are getting excited huehuehue). There is a while loop and this is also called the main game loop. Without this loop the game cannot function well. This game loop will end when you have passed the 28th day of your trial or when your limbs are all torn off which means you're dead. 
+
+There are two variables that are noticeable right from the start of the main game loop. These are r and c. r will serve as the row and c as the columns. r there is oddly equal to the currentDay-1 Divided by cols. Why is it? Well, this is because of the setup of the currentDay iterator which does not work like a double for loop nested. When the currentDay strikes to 8 it means it is now at the start of the second week, and thus currentDay - 1 = 7 and divided it by 7 it will result to 1 which is the second row on the matrix. This is also analogically similar to the column part but instead of using the divide operator, it uses the modulo operator and the reason is very obvious here (for beginners it just means that it will go to numbers not going above 7, a.k.a. the numbers of the week that is 0-indexed). 
+
+Directly below the rows and columns logic there comes the randomizer. It randomizes to whatever category it will go. With the use of the rand() function seeded by the time(null) function which is just the number of seconds from some certain date up until now, you can make sure that the random index is actually random (the remainder of any number and another number will always not go beyond the second number). And after randomly selecting the category, of course you will need to access the words that are in that category. And by assigning a word node to the head of the nodes inside the category, you can now start the game of answering. However when the category is empty the program will skip it.
+
+Now, for the fun part. Creating a condition that if the day is Sunday, the game will proceed with the [weakened] + [divinity] part, else the game will continue normally.
+
+-- The game will Start --
+
+
 
 
 
