@@ -20,7 +20,8 @@ the words, he will gain a limb if he can answer the descriptions 10 times contin
 ### Simplified Game Logic:
 
 - You are a human. (You have four limbs)
-- Each limb is equivalent to three hearts and a hint on normal days and one heart and three hints on Sundays.
+- Each limb is equivalent to three hearts on normal days and one heart on Sundays.
+- Also you will only suffer the cutting of your limb once per day, so if you lose a limb that day, you will be getting ready for the second.
 - If you answered the word right 10 times, you gain one limb (max of four - because you are a human)
 
 - Your score is recorded in a 28-Day format (representing one month of suffering)
@@ -90,6 +91,7 @@ First the program prints out your stats as well as your state, and it will now i
 - If you are out of time you will automatically be deducted by one heart and even mocked
 - If you have guessed wrong you will also be deducted by one heart. And your consecutive wins will be resetted to 0 (awee).
 - **AND IF YOU HAVE LOST ALL YOUR HEARTS, YOU WILL LOSE A LIMB**
+- of course you will only lose a limb per day [that's a limit], you can't endure the pain can you?
 
 What will you do? Of coures be fast and correct.
 

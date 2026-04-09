@@ -180,17 +180,17 @@ int main() {
 
         
         int randomIdx = rand() % totalCategories;
-        Category *todaysCategory = &categories[randomIdx];
+        Category *currentCategory = &categories[randomIdx];
 
         
-        WordEntry *it = todaysCategory->wordHead;
+        WordEntry *it = currentCategory->wordHead;
 
         if (!it) {
             currentDay++; 
             continue;
         }
 
-        
+    // assigning hearts on days as well as special days    
         if (currentDay % 7 == 0) {
             printf("\n[SUNDAY: PEACE OF MIND - 1 Heart Only]");
             p.hearts = 1;
@@ -198,17 +198,18 @@ int main() {
             p.hearts = 3;  
         }
 
-        printf("\nDAY %d | Category: %s\n", currentDay, todaysCategory->name);
+    // there should be a while loop here to make the player use up all of his hearts until he lost a limb
+    while(p.hearts > 0){
+        printf("\nDAY %d | Category: %s\n", currentDay, currentCategory->name);
         printf("Score: %d | Limbs: %d | Hearts: %d\n", p.total_score, p.limbs, p.hearts);
-        
+
         if(it->descHead){
-            printf("Hint: %s\n", it->descHead->text);
+                printf("Hint: %s\n", it->descHead->text);
         }
         time_t start = time(NULL);
         char guess[50];
         printf("GUESS (15s): ");
         scanf("%s", guess);
-
         if (difftime(time(NULL), start) > TIME_LIMIT) {
             printf("\nTOO SLOW! Heart lost.\n");
             p.hearts--;
@@ -216,7 +217,7 @@ int main() {
             printf("\nCORRECT!\n");
             p.total_score += 10;
             p.consecutive_wins++;
-            
+
             if (p.consecutive_wins >= 10 && p.limbs < 4) {
                 p.limbs++;
                 printf("MIRACLE: A LIMB GREW BACK!\n");
@@ -227,7 +228,14 @@ int main() {
             p.hearts--;
             p.consecutive_wins = 0;
         }
-
+        it = it->nextWord;
+        if(it == NULL){
+            printf("There are no more words left in this category! Going to the next category");
+            randomIdx = rand() % totalCategories;
+            currentCategory = &categories[randomIdx];
+            it = currentCategory->wordHead;
+        }
+    }
         if (p.hearts <= 0) {
             p.limbs--;
             printf("!!! A LIMB WAS SEVERED !!! (%d remaining)\n", p.limbs);
